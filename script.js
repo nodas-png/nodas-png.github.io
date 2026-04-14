@@ -155,3 +155,40 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach(section => {
     observer.observe(section);
 });
+
+let isWheeling = false;
+
+window.addEventListener('wheel', (e) => {
+    e.preventDefault();
+
+    if (isWheeling) return;
+
+    const sectionsArray = Array.from(document.querySelectorAll('section'));
+    
+    let currentIndex = sectionsArray.findIndex(section => {
+        const rect = section.getBoundingClientRect();
+        return rect.top >= -50 && rect.top <= window.innerHeight / 2;
+    });
+
+    if (currentIndex === -1) currentIndex = 0;
+
+    let targetSection = null;
+
+    if (e.deltaY > 0 && currentIndex < sectionsArray.length - 1) {
+        targetSection = sectionsArray[currentIndex + 1];
+    } else if (e.deltaY < 0 && currentIndex > 0) {
+        targetSection = sectionsArray[currentIndex - 1];
+    }
+
+    if (targetSection) {
+        isWheeling = true;
+        
+        targetSection.scrollIntoView({
+            behavior: 'smooth' 
+        });
+
+        setTimeout(() => {
+            isWheeling = false;
+        }, 800); 
+    }
+}, { passive: false });

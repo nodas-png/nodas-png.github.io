@@ -14,6 +14,10 @@
     --spacing-gap: 50px;
 }
 
+html {
+    scroll-snap-type: y mandatory;
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -32,6 +36,7 @@ section {
     justify-content: center;
     padding: 0 var(--spacing-section-x);
     box-sizing: border-box;
+    scroll-snap-align: start;
 }
 
 .navbar {
