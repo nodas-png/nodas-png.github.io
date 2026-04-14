@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/fontawesome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/regular.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/solid.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/brands.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,-50..200;1,17..18,400..700,-50..200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <a data-target="home">main()</a>
+        <a data-target="about">README.md</a>
+        <a data-target="journey">Commits</a>
+        <a data-target="contact">ping</a>
+    </nav>
+
+    <section id="home" class="section-home">
+        <h1 class="name-display">Epameinondas<br><span class="last-name">Panagiotakopoulos</span></h1>
+        <div class="button-group">
+            <button class="projects-btn" onclick="window.open('https://github.com/nodas-png')">Repositories<i class="fa-brands fa-github fa-lg"></i></button>
+            <button class="projects-btn">Contact Me</button>
+        </div>
+    </section>
+
+    <section id="about" class="section-about">
+        <div class="about-left">
+            <h2>README.md</h2>
+            <p id="about-text"></p>
+        </div>
+        <div class="about-right">
+            <div class="skill-box"><i class="fa-brands fa-html5"></i></div>
+            <div class="skill-box"><i class="fa-brands fa-css3-alt"></i></div>
+            <div class="skill-box"><i class="fa-brands fa-square-js"></i></div>
+            <div class="skill-box"><span>C</span></div>
+
+            <div class="skill-box wide"><i class="fa-brands fa-git-alt"></i><span>GIT</span></div>
+            <div class="skill-box wide"><i class="fa-brands fa-linux"></i><span>LINUX</span></div>
+
+            <div class="skill-box small"><span>C#</span></div>
+            <div class="skill-box wide"><i class="fa-solid fa-database"></i><span>SQL</span></div>
+            <div class="skill-box xsmall"><span>Lua</span></div>
+        </div>
+    </section>
+
+    <section id="journey" class="section-commits">
+        <div class="commits-container">
+            <h2>Commits</h2>
+            <div class="commit-list" id="commit-list"></div>
+        </div>
+    </section>
+
+    <canvas id="dots-canvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
