@@ -9,6 +9,7 @@
     --font-norm: 18px;
     --font-mid: 17px;
     --font-small: 16px;
+    --font-xsmall: 14px;
     --spacing-section-x: 15%;
     --spacing-gap: 50px;
 }
@@ -366,4 +367,83 @@ h2 {
     height: 100%;
     z-index: -1;
     pointer-events: none;
+}
+
+.section-certificates {
+    flex-direction: column;
+    color: white;
+}
+
+.certs-container {
+    width: 100%;
+    max-width: 900px;
+    padding-top: 50px;
+}
+
+.certs-grid {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.cert-box {
+    flex: 1;
+    border: 2px solid white;
+    border-radius: 25px;
+    corner-shape: squircle;
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    background-color: transparent;
+    cursor: default;
+}
+
+.cert-box:hover {
+    background-color: white;
+    color: var(--bg-color);
+}
+
+.cert-icon {
+    font-size: 35px;
+    margin-top: 5px;
+    transition: color 0.3s ease;
+}
+
+.cert-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cert-details h3 {
+    margin: 0;
+    font-family: "Google Sans";
+    font-size: var(--font-mid);
+    font-weight: 700;
+}
+
+.cert-issuer {
+    margin: 0;
+    font-family: "Google Sans Code";
+    font-size: var(--font-xsmall);
+    font-weight: 600;
+    color: var(--text-sub);
+    transition: color 0.3s ease;
+}
+
+.cert-desc {
+    margin: 0;
+    font-family: "Google Sans";
+    font-size: var(--font-small);
+    line-height: 1.4;
+    color: var(--text-ab);
+    transition: color 0.3s ease;
+}
+
+.cert-box:hover .cert-issuer,
+.cert-box:hover .cert-desc {
+    color: var(--bg-color);
 }
