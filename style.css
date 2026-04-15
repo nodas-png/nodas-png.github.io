@@ -261,14 +261,15 @@ h2 {
     position: relative;
 }
 
-.commit-list::before {
+.commit-item::before {
     content: '';
     position: absolute;
-    top: 10px;
-    bottom: 10px;
     left: 9px;
+    top: 30px;
+    bottom: -21px;
     width: 2px;
     background-color: var(--dot-normal);
+    border-radius: 100px;
 }
 
 .commit-item {
@@ -280,8 +281,8 @@ h2 {
 
 .commit-icon {
     font-size: 20px;
-    color: white;
-    background-color: var(--bg-color);
+    color: var(--dot-normal);;
+    background-color: transparent;
     z-index: 1;
     display: flex;
     align-items: center;
