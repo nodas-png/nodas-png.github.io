@@ -9,9 +9,13 @@
     --font-norm: 18px;
     --font-mid: 17px;
     --font-small: 16px;
-    --font-xsmall: 14px;
     --spacing-section-x: 15%;
     --spacing-gap: 50px;
+}
+
+::selection {
+    background: #bebebe50;
+    color: white;
 }
 
 html {
@@ -21,7 +25,7 @@ html {
 html, body {
     height: 100%;
     margin: 0;
-    font-family: "Google Sans Code", monospace;
+    font-family: "Google Sans Code";
 }
 
 body {
@@ -62,9 +66,52 @@ section {
     cursor: pointer;
 }
 
-.navbar a:hover,
-.navbar a.active {
+.navbar a:hover, .navbar a.active {
     color: white;
+}
+
+h2 {
+    font-size: var(--font-h2);
+    margin: 0 0 20px 0;
+    font-family: "Google Sans";
+    font-weight: 700;
+}
+
+.btn {
+    border: 2px solid white;
+    padding: 15px 20px;
+    font-family: inherit;
+    font-size: var(--font-norm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    corner-shape: squircle;
+    border-radius: 25px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.btn-filled {
+    background-color: white;
+    color: var(--bg-color);
+}
+
+.btn-filled:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.btn-outlined {
+    background-color: transparent;
+    color: white;
+}
+
+.btn-outlined:hover {
+    background-color: white;
+    color: var(--bg-color);
 }
 
 .section-home {
@@ -74,7 +121,7 @@ section {
 
 .name-display {
     color: white;
-    font-family: "Google Sans", sans-serif;
+    font-family: "Google Sans";
     font-size: var(--font-h1);
     margin: 0 0 20px 0;
     line-height: 1.2;
@@ -83,12 +130,23 @@ section {
 
 .name-desc {
     color: var(--text-ab);
-    font-family: "Google Sans Code", sans-serif;
+    font-family: "Google Sans Code";
     font-size: var(--font-small);
     margin: 0 0 30px 0;
+    display: inline-block;
 }
 
-.last-name {
+.name-desc::after {
+    content: '_';
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+.name-last {
     color: var(--text-sub);
 }
 
@@ -96,48 +154,6 @@ section {
     display: flex;
     gap: 20px;
     justify-content: center;
-}
-
-.repos-btn {
-    background-color: white;
-    color: var(--bg-color);
-    border: 2px solid white;
-    padding: 15px 20px;
-    font-family: inherit;
-    font-size: var(--font-norm);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    corner-shape: squircle;
-    border-radius: 25px;
-}
-
-.repos-btn:hover {
-    background-color: transparent;
-    color: white;
-}
-
-.btn {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    padding: 15px 20px;
-    font-family: inherit;
-    font-size: var(--font-norm);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    corner-shape: squircle;
-    border-radius: 25px;
-}
-
-.btn:hover {
-    background-color: white;
-    color: var(--bg-color);
 }
 
 .section-about {
@@ -149,13 +165,6 @@ section {
     flex: 1;
     color: white;
     max-width: 500px;
-}
-
-.about-left h2, .commits-container h2 {
-    font-size: var(--font-h2);
-    margin: 0 0 20px 0;
-    font-family: "Google Sans", sans-serif;
-    font-weight: 700;
 }
 
 .about-left p {
@@ -182,7 +191,7 @@ section {
 }
 
 .skill-box {
-    font-family: "Google Sans", sans-serif;
+    font-family: "Google Sans";
     font-weight: 900;
     border: 2px solid white;
     padding: 10px;
@@ -195,21 +204,22 @@ section {
     height: 75px;
     box-sizing: border-box;
     transition: all 0.3s ease;
+    cursor: default;
+    user-select: none;
     corner-shape: squircle;
     border-radius: 25px;
 }
 
-.skill-box.small { font-size: 28px; }
-.skill-box.xsmall { font-size: 22px; }
+.skill-small { font-size: 28px; }
 
-.skill-box.wide {
+.skill-wide {
     font-size: 38px;
     width: 170px;
     justify-content: flex-start;
     padding: 10px 15px;
 }
 
-.skill-box.wide span {
+.skill-wide span {
     flex: 1;
     text-align: center;
     font-size: var(--font-small);
@@ -217,6 +227,7 @@ section {
 }
 
 .skill-box img {
+    pointer-events: none;
     width: 45px;
     transition: all 0.3s ease;
 }
@@ -239,7 +250,7 @@ section {
     max-width: 700px;
 }
 
-.commits-container h2{
+.commits-container h2 {
     padding-top: 50px;
 }
 
@@ -300,6 +311,50 @@ section {
     font-size: var(--font-small);
     color: white;
     line-height: 1.4;
+}
+
+.section-contact {
+    flex-direction: column;
+    color: white;
+}
+
+.contact-container {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-container p {
+    font-size: var(--font-norm);
+    color: var(--text-ab);
+    margin: 0 0 40px 0;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.btn-contact {
+    font-family: "Google Sans Code";
+    font-size: var(--font-mid);
+    width: 100%;
+}
+
+.contact-socials {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.contact-socials .btn-contact {
+    flex: 1;
+    padding: 15px 0;
 }
 
 #dots-canvas {
