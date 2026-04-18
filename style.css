@@ -273,6 +273,10 @@ h2 {
     border-radius: 100px;
 }
 
+.commit-item:last-child::before {
+    bottom: 0px;
+}
+
 .commit-item {
     position: relative;
     display: flex;
@@ -446,4 +450,32 @@ h2 {
 .cert-box:hover .cert-issuer,
 .cert-box:hover .cert-desc {
     color: var(--bg-color);
+}
+
+.section-repos {
+    flex-direction: column;
+    color: white;
+}
+
+.repo-category-title {
+    font-family: "Google Sans";
+    font-size: var(--font-norm);
+    color: var(--text-sub);
+    margin: 40px 0 10px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.repo-box {
+    text-decoration: none;
+    color: inherit;
+}
+
+.minor-repos-grid {
+    flex-wrap: wrap;
+}
+
+.minor-repos-grid .cert-box {
+    min-width: 250px; 
 }

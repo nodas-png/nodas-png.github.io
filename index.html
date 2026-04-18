@@ -19,7 +19,7 @@
         <a data-target="about">README.md</a>
         <a data-target="journey">Commits</a>
         <a data-target="certificates">Certs</a>
-        <a data-target="">Repos</a>
+        <a data-target="repos">Repos</a>
         <a data-target="contact">ping</a>
     </nav>
 
@@ -27,7 +27,7 @@
         <h1 class="name-display">Epameinondas<br><span class="name-last">Panagiotakopoulos</span></h1>
         <span class="name-desc">Full-Stack Developer based in Athens, Greece</span>
         <div class="button-group">
-            <button class="btn btn-filled" onclick="window.open('https://github.com/nodas-png?tab=repositories')">Repositories<i class="fa-brands fa-github fa-lg"></i></button>
+            <button class="btn btn-filled" onclick="document.getElementById('repos').scrollIntoView({behavior: 'smooth'})">Repositories<i class="fa-brands fa-github fa-lg"></i></button>
             <button class="btn btn-outlined" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Me</button>
         </div>
     </section>
@@ -77,6 +77,57 @@
                         <p class="cert-desc">Teaches full-stack application development, cloud deployment and scaling and portfolio building through hands-on projects.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="repos" class="section-repos">
+        <div class="certs-container"> 
+            <h2>Repositories</h2>
+
+            <h3 class="repo-category-title">Major Projects</h3>
+            <div class="certs-grid">
+                <a href="https://github.com/your-link" target="_blank" class="cert-box repo-box">
+                    <div class="cert-icon"><i class="fa-solid fa-folder-open"></i></div>
+                    <div class="cert-details">
+                        <h3>Project 1</h3>
+                        <p class="cert-issuer">1 • 2 • 3</p>
+                        <p class="cert-desc">Major Project 1.</p>
+                    </div>
+                </a>
+                <a href="https://github.com/your-link" target="_blank" class="cert-box repo-box">
+                    <div class="cert-icon"><i class="fa-solid fa-folder-open"></i></div>
+                    <div class="cert-details">
+                        <h3>Project 2</h3>
+                        <p class="cert-issuer">4 • 5 • 6</p>
+                        <p class="cert-desc">Major Project 2.</p>
+                    </div>
+                </a>
+            </div>
+
+            <h3 class="repo-category-title">Other Projects</h3>
+            <div class="certs-grid minor-repos-grid">
+                <a href="https://github.com/your-link" target="_blank" class="cert-box repo-box">
+                    <div class="cert-details">
+                        <h3>Portofolio Website</h3>
+                        <p class="cert-issuer">HTML • CSS • JavaScript</p>
+                        <p class="cert-desc">My interactive digital portfolio showcasing my technical skills, developer journey and personal projects.</p>
+                    </div>
+                </a>
+                <a href="https://github.com/your-link" target="_blank" class="cert-box repo-box">
+                    <div class="cert-details">
+                        <h3>Soundwave</h3>
+                        <p class="cert-issuer">C • Linux</p>
+                        <p class="cert-desc">CLI utility for processing WAV files, supporting info retrieval, speed, volume and channel adjustments or FM synthesis.</p>
+                    </div>
+                </a>
+                <a href="https://github.com/your-link" target="_blank" class="cert-box repo-box">
+                    <div class="cert-details">
+                        <h3>Minor Script Utility</h3>
+                        <p class="cert-issuer">Lua • 2022</p>
+                        <p class="cert-desc">A small utility script created to enhance performance and gameplay on FiveM servers.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
